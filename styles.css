@@ -1,0 +1,97 @@
+:root{
+    --header: oklch(92.3% 0.003 48.717);
+    --sidebar: oklch(55.3% 0.013 58.071);
+    --main-content: oklch(96% 0.002 17.2);
+    --btn-background: oklch(95.4% 0.038 75.164);
+    --fuschia: oklch(29.3% 0.136 325.661);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    font-family: Doto;
+}
+
+button{
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 7px;
+    padding: 6px 12px;
+    background-color: var(--btn-background);
+    color: var(--fuschia);
+    border: solid 2px var(--btn-background);
+  /* Syntax: box-shadow: [X-offset] [Y-offset] [blur] [spread] [color]; Shadow for bottom and right side of btn*/ 
+    box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.main-grid{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: clamp(130px, 150px, 180px) 1fr;
+    grid-template-rows: clamp(100px, 150px, 250px) 1fr;
+}
+
+.header{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    background-color: var(--header);
+}
+
+.sidebar{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background-color: var(--sidebar);
+    
+}
+
+.main-content{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background-color: var(--main-content);
+}
+
+.header{
+    display: flex;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 8px 18px -10px rgba(0, 0, 0, 0.35); /* Shadow for bottom side of div */
+    justify-content: space-between;
+}
+
+.lib-header{
+    padding-left: 30px;
+    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-around;
+    padding-bottom: 25px;
+}
+.lib-header img{
+    height: 70px;
+    width: auto;
+}
+
+.lib-header h2{
+    margin-bottom: 0px;
+}
+
+.header-btns{
+    display: flex;
+    
+    align-items: flex-end;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
