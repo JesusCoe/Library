@@ -1,9 +1,10 @@
 :root{
     --header: oklch(92.3% 0.003 48.717);
-    --sidebar: oklch(55.3% 0.013 58.071);
+    --sidebar: oklch(28.6% 0.066 53.813);
     --main-content: oklch(96% 0.002 17.2);
     --btn-background: oklch(95.4% 0.038 75.164);
     --fuschia: oklch(29.3% 0.136 325.661);
+    --modal-actual-background: rgba(228, 228, 249, 0.6);
 }
 
 body{
@@ -27,12 +28,81 @@ button{
   /* Syntax: box-shadow: [X-offset] [Y-offset] [blur] [spread] [color]; Shadow for bottom and right side of btn*/ 
     box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 0.3);
 }
+/* ------- MODAL --------- */
+.modal{
+    /* This allows the div (in this case the form div to hide 
+    and show up when the button is pressed) */
+    display: none;   
+    z-index: 2;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--modal-actual-background);
+}
 
+.modal-close{
+    align-self: flex-end;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.modal-content{
+    /* All this is just to have the form div positioned and style it */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    background-color: oklch(25.7% 0.09 281.288);
+    width: 300px;
+    position: fixed;
+    top: 25vh;
+    left: calc(50vw - 150px);
+    border: 2px solid oklch(78.5% 0.115 274.713);
+    z-index: 3;
+}
+
+.modal-content form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 3; /* This property allows the element to show up in front of lower valued
+    elements, so this helps with the "Div on top stuff" */
+    gap: 10px;
+    
+}
+
+.modal-content input{
+    margin: 10px;
+    padding: 5px;
+    font-weight: 500;
+}
+
+.modal-content label, .modal-content span, .modal-content h3{
+    font-weight: 700;
+    color: oklch(87% 0.065 274.039);
+}
+
+.is-read{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.modal-alert-box{
+    display: none;
+    font-size: 1rem;
+    color: red;
+    text-align: center;
+}
+
+/* ------- GRID AND ASIGNATION --------- */
 .main-grid{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: clamp(130px, 150px, 180px) 1fr;
+    grid-template-columns: 200px 1fr;
     grid-template-rows: clamp(100px, 150px, 250px) 1fr;
 }
 
@@ -54,6 +124,8 @@ button{
     grid-row: 2/3;
     background-color: var(--main-content);
 }
+
+/* -------- HEADER ----------- */
 
 .header{
     display: flex;
@@ -83,10 +155,61 @@ button{
 
 .header-btns{
     display: flex;
-    
     align-items: flex-end;
     padding-right: 10px;
     padding-bottom: 10px;
+}
+
+/* ---------- SIDEBAR --------- */
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+.sidebar h3{
+    color: var(--btn-background);
+    text-align: center;
+    margin-top: 5px;
+}
+
+.counters{
+    color: var(--fuschia);
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    min-width: fit-content;
+    width: 85%;
+}
+
+.read, .unread{
+    background-color: var(--btn-background);
+    padding: 5px 9px;
+    border-radius: 6px;
+}
+
+/* -------- MAIN CONTENT (BOOKS) -------------- */
+.main-content{
+    display: grid;
+
+}
+
+@media (max-width: 600px){
+    .main-grid{
+        grid-template-columns: 150px 1fr;
+    }
+
+    .sidebar h3{
+        font-size: 1rem;
+    }
+
+    .counters{
+        font-size: 0.9rem;
+    }
 }
 
 
