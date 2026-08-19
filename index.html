@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library</title>
+    <title>Jesus Coe | Library</title>
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
     </style>
@@ -12,6 +12,32 @@
 </head>
 <body>
     <div class="main-container">
+        <div id="modal-add-book" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">X</span>
+                <form action="" method="get">
+                    <h3>Add a Book:</h3>
+                    <input type="text"
+                    id="title"
+                    placeholder="Title"
+                    required="Required"
+                    maxlength="40">
+                    <input type="text"
+                    id="author"
+                    placeholder="Author"
+                    required="required"
+                    maxlength="45">
+                    <div class="modal-alert-box">
+
+                    </div>
+                    <div class="is-read">
+                        <label for="read">Mark as Read</label>
+                        <input type="checkbox" class="read" id="read">
+                    </div>
+                    <button type="submit" class="submit-book-button">Add Book</button>
+                </form>
+            </div>
+        </div>
         <div class="main-grid">
             <div class="header">
                 <div class="lib-header">
@@ -19,17 +45,23 @@
                     <img src="./misc/book.gif" alt="a cool gif of a book">
                 </div>
                 <div class="header-btns">
-                    <button class="addBook">
+                    <button id="showFormBtn">
                         Add Book
                     </button>
                 </div>
             </div>
             <div class="sidebar">
-
+                <h3>Your shelves</h3>
+                <div class="counters">
+                    <div class="unread">Unread:</div>
+                    <div class="read">Read:</div>
+                </div>
             </div>
-            <div class="main-content">
+            
+        </div>
 
-            </div>
+        
+
         </div>
     </div>
 </body>
