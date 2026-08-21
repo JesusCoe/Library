@@ -20,7 +20,7 @@
                     <input type="text"
                     id="title"
                     placeholder="Title"
-                    required="Required"
+                    required="required"
                     maxlength="40">
                     <input type="text"
                     id="author"
@@ -35,6 +35,34 @@
                         <input type="checkbox" class="read" id="read">
                     </div>
                     <button type="submit" class="submit-book-button">Add Book</button>
+                </form>
+            </div>
+        </div>
+        <div id="modal-edit-book" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">X</span>
+                <form action="" method="get">
+                    <h3>Edit Book:</h3>
+                    <input type="text" 
+                    id="title"
+                    class="edit-title"
+                    placeholder="Title"
+                    required="required"
+                    maxlength="40">
+                    <input type="text" 
+                    id="author"
+                    class="edit-author"
+                    placeholder="Author"
+                    required="required"
+                    maxlength="45">
+                    <div class="modal-alert-box" id="modal-edit-alert">
+                        <p>That book already exists in your library</p>
+                    </div>
+                    <div class="is-read">
+                        <label for="read">Mark as read</label>
+                        <input type="checkbox" class="read" id="read">
+                    </div>
+                    <button class="submit-book-button" id="submit-edit-book-btn">Add Book</button>
                 </form>
             </div>
         </div>
@@ -57,7 +85,9 @@
                     <div class="read">Read:</div>
                 </div>
             </div>
-            
+            <div class="main-content">
+                
+            </div>
         </div>
 
         
