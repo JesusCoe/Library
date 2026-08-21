@@ -15,5 +15,8 @@ class Book{
 
 }
 
+function addBookToLibrary(title, author, pages, read){
+    myLibrary.push(new Book(crypto.randomUUID(), title, author, pages, read));
+}
 
 
