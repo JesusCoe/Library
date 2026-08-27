@@ -213,7 +213,6 @@ button{
 
 .book-card{
     font-weight: 700;
-    margin: 0;
     background-color: var(--btn-background);
     height: 21vh;
     width: clamp(22.9ch, 31%, 35ch);
@@ -234,14 +233,13 @@ button{
     border-radius: 0;
 }
 
-.book-card-btns{
+/* .book-card-btns{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-evenly;
     width: clamp(25ch, 40%, 75ch);
-}
-
+} */
 
 .book-card button {
     background-color: var(--main-content);
@@ -261,7 +259,7 @@ margin-bottom: 2px;
 
 .btn-container{
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     gap: 6px;
     justify-content: center;
 }
