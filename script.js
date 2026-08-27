@@ -8,9 +8,9 @@ class Book{
         this.read = read;
     }
 
-    info(){ // Method that shows the info of the book
-        return `${this.title} by ${this.author}, read? ${this.read} and has the ID ${this.id}`;
-    }
+    // info(){ Pretty much useless
+    //     return `${this.title} by ${this.author}, read? ${this.read} and has the ID ${this.id}`;
+    // }
 
 }
 
@@ -75,28 +75,43 @@ function createBookCard(book){
     const bookCard = document.createElement("div");
     bookCard.classList.add('book-card');
 
-    bookCard.innerHTML = `
-    <h3 class='book-card-title'>${book.title}</h3>
-    <p>By: ${book.author}</p>
-    <p>Read? ${book.read ? 'Yes' : 'No'}</p>
-    <div class='btn-container'>
-        <button class='edit-book-button' data-book-id='${book.id}'>Edit Book</button>
-        <button>Delete Book</button>
-    </div>
-    `;
+    const title = document.createElement('h3');
+    title.classList.add('book-card-title');
+    title.textContent = book.title;
+
+    const author = document.createElement('p');
+    author.textContent = `By: ${book.author}`;
+
+    const readStatus = document.createElement('p');
+    readStatus.textContent = `Read? ${book.read ? 'Yes' : 'No'}`
+
+    const btnContainer = document.createElement('div');
+    btnContainer.classList.add('btn-container');
+
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('edit-book-btn');
+    editBtn.dataset.bookId = book.id;
+    editBtn.textContent = 'Edit Book';
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = 'Delete Book';
+
+    btnContainer.append(editBtn, deleteBtn);
+    bookCard.append(title, author, readStatus, btnContainer);
 
     mainContent.appendChild(bookCard);
 
 }
 
 function loopArray(library){
-    const mainContent = document.querySelector('.main-content');
     mainContent.replaceChildren(); // Replaces childrens for new cards
 
     library.forEach((book) => {
         createBookCard(book);
     })
 }
+
+
 
 
 
