@@ -18,11 +18,13 @@
                 <form action="" method="get">
                     <h3>Add a Book:</h3>
                     <input type="text"
+                    name="title"
                     id="title"
                     placeholder="Title"
                     required="required"
                     maxlength="40">
                     <input type="text"
+                    name="author"
                     id="author"
                     placeholder="Author"
                     required="required"
@@ -32,7 +34,7 @@
                     </div>
                     <div class="is-read">
                         <label for="read">Mark as Read</label>
-                        <input type="checkbox" class="read" id="read">
+                        <input type="checkbox" class="read" id="read" name="read">
                     </div>
                     <button type="submit" class="submit-book-button">Add Book</button>
                 </form>
