@@ -212,6 +212,7 @@ button{
 }
 
 .book-card{
+    font-weight: 700;
     margin: 0;
     background-color: var(--btn-background);
     height: 21vh;
@@ -226,6 +227,7 @@ button{
 .book-card-title{
     font-style: italic;
     font-size: 1.2rem;
+    margin-top: 0px;
     color: var(--form-back);
     font-weight: 700;
     border-bottom: 2px solid var(--form-back);
@@ -240,10 +242,31 @@ button{
     width: clamp(25ch, 40%, 75ch);
 }
 
+
 .book-card button {
     background-color: var(--main-content);
     color: var(--btn-background);
+    font-size: 12px;
+    padding: 3px 6px;
 }
+
+.book-card > :nth-child(2){
+margin-bottom: 2px;
+}
+
+.book-card > :nth-child(3){
+    margin-top: 2px;
+    margin-bottom: 3px;
+}
+
+.btn-container{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 6px;
+    justify-content: center;
+}
+
+
 
 @media (max-width: 600px){
     .main-grid{
