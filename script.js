@@ -25,7 +25,11 @@ const addBookModal = document.querySelector('#modal-add-book');
 const editBookModal = document.querySelector('#modal-edit-book');
 const modalCloseButtons = document.querySelectorAll('.modal-close');
 const mainContent = document.querySelector('.main-content');
+const allModals = document.querySelectorAll('.modal');
 const form = document.querySelector('form');
+
+const addBookForm = addBookModal.querySelector('form');
+const editBookForm = editBookModal.querySelector('form');
 
 //  ----------- EVENT LISTENER TO SHOW AND CLOSE MODALS -----------------
 // These are made so the modal can close an show up when pressing the add book button
@@ -46,10 +50,12 @@ modalCloseButtons.forEach((closeButton) => {
     });
 });
 
-addBookModal.addEventListener('click', (e) => {
-    if(e.target === addBookModal){
-        addBookModal.style.display = 'none';
-    }
+allModals.forEach((modal) => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
 
 // ------------------ FORM DATA HANDLING --------------
@@ -89,7 +95,7 @@ function createBookCard(book){
     btnContainer.classList.add('btn-container');
 
     const editBtn = document.createElement('button');
-    editBtn.classList.add('edit-book-btn');
+    editBtn.classList.add('edit-book-button');
     editBtn.dataset.bookId = book.id;
     editBtn.textContent = 'Edit Book';
 
