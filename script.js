@@ -29,7 +29,7 @@ const allModals = document.querySelectorAll('.modal');
 const form = document.querySelector('form');
 const deleteBookBtn = document.querySelector('.delete-book-button');
 const sidebar = document.querySelector('.sidebar');
-const unreadBooks = document.querySelector('.counters .unread');
+const unreadBooks = document.querySelector('.counters .unread'); //Need .counters since i messed up some class names, not changing them soon
 const readBooks = document.querySelector('.counters .read');
 
 const addBookForm = addBookModal.querySelector('form');

@@ -196,6 +196,10 @@ button{
     border-radius: 6px;
 }
 
+.read:hover, .unread:hover{
+    cursor: pointer;
+}
+
 /* -------- MAIN CONTENT (BOOKS) -------------- */
 .main-content{
     margin: 0 auto;
