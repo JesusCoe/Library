@@ -105,7 +105,7 @@ button{
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 170px 1fr;
     grid-template-rows: clamp(100px, 150px, 250px) 1fr;
 }
 
@@ -196,6 +196,10 @@ button{
     border-radius: 6px;
 }
 
+.read:hover, .unread:hover{
+    cursor: pointer;
+}
+
 /* -------- MAIN CONTENT (BOOKS) -------------- */
 .main-content{
     margin: 0 auto;
@@ -232,14 +236,6 @@ button{
     border-bottom: 2px solid var(--form-back);
     border-radius: 0;
 }
-
-/* .book-card-btns{
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-evenly;
-    width: clamp(25ch, 40%, 75ch);
-} */
 
 .book-card button {
     background-color: var(--main-content);
