@@ -28,6 +28,9 @@ const mainContent = document.querySelector('.main-content');
 const allModals = document.querySelectorAll('.modal');
 const form = document.querySelector('form');
 const deleteBookBtn = document.querySelector('.delete-book-button');
+const sidebar = document.querySelector('.sidebar');
+const unreadBooks = document.querySelector('.counters .unread');
+const readBooks = document.querySelector('.counters .read');
 
 const addBookForm = addBookModal.querySelector('form');
 const editBookForm = editBookModal.querySelector('form');
@@ -82,10 +85,11 @@ mainContent.addEventListener('click', (e) => {
         if(index !== -1){
             myLibrary.splice(index, 1);
         }
-        loopArray(myLibrary);
+        loopArray(myLibrary); //Reloads the information of the arrays
         return;
     }
 });
+
 
 // ------------------ FORM DATA HANDLING --------------
 form.addEventListener('submit', (e) =>{
@@ -146,6 +150,8 @@ function loopArray(library){
     library.forEach((book) => {
         createBookCard(book);
     })
+    
+    updateLibraryStats();
 }
 
 // -------------------- EDIT BOOK (Submit handler) ---------------------
@@ -171,6 +177,25 @@ editBookForm.addEventListener('submit', (e) => {
     loopArray(myLibrary); //re-renders the DOM elements
     editBookModal.style.display = 'none';
 });
+
+// ------------- SHELF BOOK COUNTER ---------------
+
+function countReadBooks(library, key, value){
+    if(library.length === 0){ // for empty array
+        return 0;
+    }
+    return library.filter((entry) => entry[key] === value).length; 
+}
+
+function updateLibraryStats() {
+    const unreadCount = countReadBooks(myLibrary, 'read', false);
+    const readCount = countReadBooks(myLibrary, 'read', true);
+
+    readBooks.textContent = `Read: ${readCount}`;
+    unreadBooks.textContent = `Unread: ${unreadCount}`;
+}
+
+
 
 
 
