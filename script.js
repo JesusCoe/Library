@@ -56,7 +56,7 @@ allModals.forEach((modal) => {
     });
 });
 
-// This one is for the
+// Delegated click handler for book card actions (edit/delete)
 mainContent.addEventListener('click', (e) => {
     //Handle edit button
     if (e.target.matches('.edit-book-button')){
