@@ -27,8 +27,6 @@ const modalCloseButtons = document.querySelectorAll('.modal-close');
 const mainContent = document.querySelector('.main-content');
 const allModals = document.querySelectorAll('.modal');
 const form = document.querySelector('form');
-const deleteBookBtn = document.querySelector('.delete-book-button');
-const sidebar = document.querySelector('.sidebar');
 const unreadBooks = document.querySelector('.counters .unread'); //Need .counters since i messed up some class names, not changing them soon
 const readBooks = document.querySelector('.counters .read');
 
